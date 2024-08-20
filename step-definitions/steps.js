@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 Given('I open the testing page', async function () {
-    console.log('inside');
+
     await page.goto('https://qa-practice.netlify.app/');
     await page.waitForLoadState();
 
