@@ -3,16 +3,16 @@
   "version": "1.0.0",
   "description": "sample automation test",
   "main": "index.js",
-
+  "scripts": {
+    "test": "cucumber-js",
+    "type": "module"
+  },
+  "author": "Sujata Mohapatra",
+  "license": "ISC",
   "devDependencies": {
     "@cucumber/cucumber": "^10.9.0",
     "@playwright/test": "^1.46.1",
-    "@types/node": "^22.4.1",
+    "core-js": "^3.37.1",
     "playwright": "^1.46.1"
-  },
- 
-  "scripts": {
-  "test": "cucumber-js",
- "type": "module"
   }
 }
