@@ -12,12 +12,17 @@ Given('I open the testing page', async function () {
 
 });
 
+// Then('I see the {string} option', async function () {
+
+// await page.locator('#auth-shop').toBeVisible();
+
+// });
+
 // When('I login with username {string} and password {string}', function (userName, userPassword) {
+
 
 // });
 
 // Then('the default landing page is visible', function () {
-
-
-// });
-
+// 
+// };
