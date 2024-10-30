@@ -23,6 +23,11 @@ node_modules/
 index.html
 *.html
 reports/
+screenshots/
+
+
+
+browser_cache/
 
 ## packages
 package-lock.json

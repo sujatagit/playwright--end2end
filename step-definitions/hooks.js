@@ -26,7 +26,6 @@ BeforeAll(async function () {
 
 });
 
-
 Before(async function (scenario) {
     // Print feature names while tests are running
     if (featureName != scenario.gherkinDocument.feature.name) {

@@ -32,4 +32,3 @@ Then('the shopping page is visible', async function () {
     await expect(shoppingItems).toBeVisible();
 
 });
-
