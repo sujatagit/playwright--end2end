@@ -4,25 +4,31 @@ const { chromium } = require('playwright');
 const { expect } = require('@playwright/test');
 const fs = require('fs');
 const path = require('path');
+const { Base } = require('../models/Base');
 
-Given('I open the testing page', async function () {
+
+Given('I open the testing page', { timeout: 20000 }, async function () {
 
     await page.goto('https://qa-practice.netlify.app/');
     await page.waitForLoadState();
 
 });
 
-// Then('I see the {string} option', async function () {
+Then('I nagivate to the ecommerce login page', async function () {
 
-// await page.locator('#auth-shop').toBeVisible();
+    await tRansaction.navigateFromMenu();
 
-// });
+});
 
-// When('I login with username {string} and password {string}', function (userName, userPassword) {
+When('I login with user credentials', async function () {
 
+    await tRansaction.login();
 
-// });
+});
 
-// Then('the default landing page is visible', function () {
-// 
-// };
+Then('the shopping page is visible', async function () {
+
+    let shoppingItems = page.locator('.shop-items');
+    await expect(shoppingItems).toBeVisible();
+
+});

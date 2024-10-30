@@ -13,6 +13,6 @@
     "@cucumber/cucumber": "^10.9.0",
     "@playwright/test": "^1.46.1",
     "core-js": "^3.37.1",
-    "playwright": "^1.46.1"
+    "playwright": "^1.48.2"
   }
 }
