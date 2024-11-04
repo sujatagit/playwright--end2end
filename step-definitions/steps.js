@@ -28,7 +28,21 @@ When('I login with user credentials', async function () {
 
 Then('the shopping page is visible', async function () {
 
-    let shoppingItems = page.locator('.shop-items');
-    await expect(shoppingItems).toBeVisible();
+    await expect(page.locator(tRansaction.shoppingItems)).toBeVisible();
 
 });
+
+When('I add {string} to the shopping cart', async function (iphoneType) {
+
+    await expect(page.getByText(iphoneType)).toBeVisible();
+    await page.getByRole('button', { name: 'ADD TO CART' }).nth(4).click();
+});
+
+Then('I proceed to checkout', async function () {
+
+    await tRansaction.proceedToCheckout();
+
+});
+
+
+
