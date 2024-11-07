@@ -36,7 +36,6 @@ When('I add {string} to the shopping cart', async function (iphoneType) {
 
     await expect(page.getByText(iphoneType)).toBeVisible();
     await page.getByRole('button', { name: 'ADD TO CART' }).nth(4).click();
-});
 
 Then('I proceed to checkout', async function () {
 
