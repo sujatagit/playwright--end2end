@@ -1,5 +1,4 @@
 const { setWorldConstructor, World } = require('@cucumber/cucumber');
-var { setDefaultTimeout } = require('@cucumber/cucumber');
 
 global.timeout = 60 * 1000;
 global.moderateTimeout = 3 * 60 * 1000;
@@ -30,6 +29,6 @@ class CustomWorld extends World {
     test() {
         return this.variable;
     }
-}
+};
 
 setWorldConstructor(CustomWorld);
