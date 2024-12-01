@@ -1,4 +1,3 @@
-const { Base } = require('./Base');
 const fs = require('fs');
 const { expect } = require('@playwright/test');
 
@@ -37,6 +36,29 @@ exports.Base = class Base {
         await page.getByRole('button', { name: 'Submit' }).click();
         await expect(page.getByRole('button', { name: 'PROCEED TO CHECKOUT' })).toBeVisible();
 
+    };
+
+    /**
+     * [this will select the text box in the form and input the data]
+     */
+
+    async shippingDetails(detailFormName, dataInput) {
+
+        await page.getByRole('textbox', { name: detailFormName }).pressSequentially(dataInput, { delay: 100 });
+        await page.keyboard.press("Enter");
+
+
+    };
+    /**
+     * [dropDownSelection]
+     *
+     * @param   {[drop down]}  countryName  [United States of America]
+     *
+     * @return  {[string}               [return country selection]
+     */
+    async dropDownSelection(countryName) {
+
+        await page.locator('#countries_dropdown_menu').selectOption(countryName);
     };
 
 };

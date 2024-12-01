@@ -14,7 +14,8 @@ exports.Transaction = class tRansaction extends Base {
     async proceedToCheckout() {
 
         await page.getByRole('button', { name: 'PROCEED TO CHECKOUT' }).click();
-        await expect(page.locator('#phone')).toBeVisible();
-    }
+        await expect(page.getByText('Shipping Details')).toBeVisible();
+
+    };
 
 };

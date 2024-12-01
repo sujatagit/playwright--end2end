@@ -21,6 +21,7 @@ BeforeAll(async function () {
 
     });
     const context = await browser.newContext();
+    await context.setDefaultTimeout(timeout);
     console.log('Opening new page...');
     page = await context.newPage()
 

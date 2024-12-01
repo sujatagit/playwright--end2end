@@ -4,8 +4,11 @@ let timestamp = `${('0' + (currentDate.getMonth() + 1)).slice(-2)}-${('0' + curr
 console.log(`expected report file should include ${timestamp}`);
 
 let common = [
-    // 'features/**/*.feature',                // Specify our feature files
-    'features/Login.feature', // Specify our feature files
+
+    'features/login.feature', // Specify our feature files
+    'features/shopping.feature', // Specify our feature files
+    'features/submitOrder.feature', // Specify our feature files
+
 
     `--require step-definitions/**/*.js`,   // Load step definitions
     `--format html:./reports/report-qa-${timestamp}.html`,    // Load custom formatter
