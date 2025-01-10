@@ -64,15 +64,40 @@ When('I select {string} in the country box', async function (countryName) {
 
 });
 
-Then('I click the {string} button', async function (submitButton) {
+Then('I click the {string} button', async function (buttonName) {
 
-    await page.getByRole('button', { name: submitButton }).click();
+    await tRansaction.clickingButton(buttonName);
 
 });
 
 Then('I receive a successful order placed message', async function () {
 
     await expect(page.locator('#message')).toBeVisible();
+    let homeButton = page.locator(`#navbarSupportedContent:has-text('Home')`);
+    await homeButton.waitFor();
 
 });
+
+Then('I navigate to the home page', async function () {
+
+    await expect(page.getByText('Welcome!')).toBeVisible();
+
+});
+
+Then('I open the {string} page', async function (menuName) {
+
+    await tRansaction.openFromMenu(menuName);
+
+});
+
+Then('I expect the gif to be visible', async function () {
+
+    // await expect(page.toHaveScreenshot('visual test.png'));
+    await expect(page.locator(`#dynamic-gif`)).toBeVisible();
+
+});
+
+
+
+
 
