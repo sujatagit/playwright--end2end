@@ -15,3 +15,7 @@ Feature: Submit order
         And I click the "Submit Order" button
         Then I receive a successful order placed message
 
+    Scenario: User go back to the home page
+        Given I receive a successful order placed message
+        When I click the "Home" button
+        Then I navigate to the home page

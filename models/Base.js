@@ -6,7 +6,7 @@ exports.Base = class Base {
     /**
      * [navigateFromMenu description]
      * this will click the emcommerce option in the menu and open the pager
-     * @return  {[page navigation]}  [ecommerce login page opens]
+     * @return  {[page navigation]}  
      */
     async navigateFromMenu() {
 
@@ -59,6 +59,47 @@ exports.Base = class Base {
     async dropDownSelection(countryName) {
 
         await page.locator('#countries_dropdown_menu').selectOption(countryName);
+    };
+
+    async clickingButton(buttonName) {
+
+        if (buttonName == 'Submit Order') {
+
+            await page.getByRole('button', { name: buttonName }).click();
+
+        }
+
+        if (buttonName == 'Home') {
+
+            await page
+                .getByRole('listitem')
+                .filter({ hasText: 'Home' })
+                .click();
+
+        }
+
+    };
+
+    async openFromMenu(menuName) {
+
+        switch (menuName) {
+
+            case 'Visual testing':
+                let visualPagelink = page.locator('a#visual');
+                await expect(visualPagelink).toBeVisible();
+                await visualPagelink.click();
+                await expect(page.getByRole('heading', { name: 'GIF page' })).toBeVisible();
+                break;
+
+            case 'Dropdown':
+                let dropDownLink = page.locator('a#forms');
+                await expect(dropDownLink).toBeVisible();
+                await dropDownLink.click();
+                await expect(page.locator('#dropdown-menu')).toBeVisible();
+                break;
+
+        }
+
     };
 
 };

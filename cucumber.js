@@ -8,6 +8,7 @@ let common = [
     'features/login.feature', // Specify our feature files
     'features/shopping.feature', // Specify our feature files
     'features/submitOrder.feature', // Specify our feature files
+    'features/visualTest.feature', // Specify our feature files
 
 
     `--require step-definitions/**/*.js`,   // Load step definitions
