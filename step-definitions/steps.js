@@ -96,8 +96,3 @@ Then('I expect the gif to be visible', async function () {
     await expect(page.locator(`#dynamic-gif`)).toBeVisible();
 
 });
-
-
-
-
-

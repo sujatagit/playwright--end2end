@@ -5,8 +5,3 @@ Feature: Login to the testing site
         And I nagivate to the ecommerce login page
         When I login with user credentials
         Then the shopping cart page is visible
-
-
-
-
-
